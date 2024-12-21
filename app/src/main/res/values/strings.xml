@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Skripsi</string>
+
+
+
+    <!-- Bacterial -->
+    <string name="bacterial_fulltext">bacterial</string>
+    <string name="bacterial_halftext">bacterial</string>
+
+    <!-- Fungal -->
+    <string name="fungal_fulltext">fungal</string>
+    <string name="fungal_halftext">fungal</string>
+
+    <!-- Healthy -->
+    <string name="healthy_fulltext">Healthy Lettuce</string>
+    <string name="healthy_halftext">Healthy</string>
+
+    <!-- Shepherd's Purse Weeds -->
+    <string name="shepherd_fulltext">shepherd</string>
+    <string name="shepherd_halftext">shepherd</string>
+
+
+</resources>
