@@ -79,6 +79,8 @@ dependencies {
     implementation(libs.tensorflow.lite.support)
     implementation(libs.tensorflow.lite.metadata)
     implementation(libs.tensorflow.lite.gpu)
+    implementation(libs.generativeai)
+    implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -105,4 +107,8 @@ dependencies {
 
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("com.sendgrid:sendgrid-java:4.7.2")
+
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.compose.material3:material3")
+    implementation("com.github.Jithin-Jude:lib_gemini_chatbot:1.0.8")
 }

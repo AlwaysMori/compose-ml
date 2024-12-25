@@ -2,4 +2,6 @@
 <resources>
 
     <style name="Theme.testapp" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.chat" parent="Theme.AppCompat.Light.NoActionBar" />
+
 </resources>
