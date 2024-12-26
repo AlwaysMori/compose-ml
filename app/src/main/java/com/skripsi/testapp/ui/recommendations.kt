@@ -30,12 +30,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Devices
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
 import com.skripsi.testapp.Disease
 import com.skripsi.testapp.DiseaseViewModel
@@ -247,7 +251,7 @@ fun Bacterial(){
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            "Lorem",
+            stringResource(id = R.string.bahan_kimia_bacterial),
             fontSize = 16.sp,
             color = Color(0xFF585858),
         )
@@ -264,7 +268,7 @@ fun Bacterial(){
         Spacer(modifier = Modifier.height(8.dp))
 
         Text(
-            "Lorem",
+            stringResource(id = R.string.bahan_tradisional_bacterial),
             fontSize = 16.sp,
             color = Color(0xFF585858)
         )
@@ -287,7 +291,7 @@ fun Fungal() {
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            "Lorem",
+            stringResource(id = R.string.bahan_kimia_fungal),
             fontSize = 16.sp,
             color = Color(0xFF585858),
         )
@@ -304,7 +308,7 @@ fun Fungal() {
         Spacer(modifier = Modifier.height(8.dp))
 
         Text(
-            "Lorem",
+            stringResource(id = R.string.bahan_tradisional_fungal),
             fontSize = 16.sp,
             color = Color(0xFF585858)
         )
@@ -327,7 +331,7 @@ fun Shepherd() {
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            "Lorem",
+            stringResource(id = R.string.bahan_kimia_shepherd),
             fontSize = 16.sp,
             color = Color(0xFF585858),
         )
@@ -344,11 +348,16 @@ fun Shepherd() {
         Spacer(modifier = Modifier.height(8.dp))
 
         Text(
-            "Lorem",
+            stringResource(id = R.string.bahan_tradisional_shepherd),
             fontSize = 16.sp,
             color = Color(0xFF585858)
         )
         Spacer(modifier = Modifier.height(16.dp))
         Divider(color = Color.LightGray, thickness = 1.dp)
     }
+}
+@Preview(showBackground = true, device = Devices.PIXEL_4)
+@Composable
+fun RecommendationsScreenPreview() {
+    HomeScreen(navController = rememberNavController())
 }

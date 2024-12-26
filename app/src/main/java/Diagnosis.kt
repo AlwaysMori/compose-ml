@@ -20,7 +20,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -182,6 +184,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
             }
         }
 
+        // Membungkus konten dalam ScrollView untuk menghindari tombol tertutup
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -193,7 +196,8 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(16.dp),
+                    .padding(16.dp)
+                    .verticalScroll(rememberScrollState()),  // Menambahkan scroll
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
