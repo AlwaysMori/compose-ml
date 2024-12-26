@@ -23,6 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
@@ -71,7 +72,7 @@ fun Navigation() {
                                 }
                         )
                     },
-                    backgroundColor = Color(0xFFD0FFCF),
+                    backgroundColor = Color(0xFF6EC1E4),
                 )
             }
         },

@@ -76,11 +76,11 @@ fun SplashScreen() {
             .background(
                 brush = Brush.linearGradient(
                     colors = listOf(
-                        Color(0xFF61F878), // Start color (white)
-                        Color(0xFF61F878)  // End color (green)
+                        Color(0xFF6EC1E4), // Soft blue
+                        Color(0xFF56E39F)  // Soft green
                     ),
-                    start = Offset(0f, 0f),                  // Top
-                    end = Offset(0f, Float.POSITIVE_INFINITY)
+                    start = Offset(0f, 0f),
+                    end = Offset(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
                 )
             )
     ) {

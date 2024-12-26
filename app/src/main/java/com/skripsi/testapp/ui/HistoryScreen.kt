@@ -74,13 +74,12 @@ fun HistoryScreen(navController : NavHostController, diseaseViewModel: DiseaseVi
             .fillMaxSize()
             .background(
                 brush = Brush.linearGradient(
-                    colorStops = arrayOf(
-                        0f to Color(0xFFD0FFCF),
-                        0.6f to Color(0xFFD0FFCF),
-                        1f to Color(0xFFFFFFFF)
+                    colors = listOf(
+                        Color(0xFF6EC1E4), // Soft blue
+                        Color(0xFF56E39F)  // Soft green
                     ),
                     start = Offset(0f, 0f),
-                    end = Offset(0f, Float.POSITIVE_INFINITY)
+                    end = Offset(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
                 )
             )
     ) {

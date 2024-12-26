@@ -59,14 +59,13 @@ fun ScanButton(onImageCaptured: (Uri?) -> Unit, navController: NavHostController
             showDialog.value = true
         },
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFF61F878),
+            containerColor = Color(0xFF7FFF4E),
             contentColor = Color.Black
         ),
         shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(6.dp)
-            .height(120.dp)
+            .height(60.dp)
     ) {
         Row(
             modifier = Modifier
@@ -79,7 +78,7 @@ fun ScanButton(onImageCaptured: (Uri?) -> Unit, navController: NavHostController
 
             Text(
                 text = "Identifikasi Penyakit",
-                fontSize = 18.sp,
+                fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black,
                 modifier = Modifier.padding(start = 16.dp)             )

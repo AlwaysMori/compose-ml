@@ -291,13 +291,13 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                     },
                     enabled = disease != "Healthy",
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFF61F878),
+                        containerColor = Color(0xFF7FFF4E),
                         contentColor = Color.Black
                     ),
-                    shape = RoundedCornerShape(8.dp),
+                    shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(50.dp)
+                        .height(60.dp)
                 ) {
                     Text(
                         text = "Rekomendasi",

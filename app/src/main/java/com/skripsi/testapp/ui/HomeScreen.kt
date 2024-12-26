@@ -32,13 +32,12 @@ fun HomeScreen(navController: NavHostController) {
             .fillMaxSize()
             .background(
                 brush = Brush.linearGradient(
-                    colorStops = arrayOf(
-                        0f to Color(0xFF1FB362), // Start color (white)
-                        0.6f to Color(0xFF1FB362),// Duplicate the first color to stop at 60%
-                        1f to Color(0xFF61F878)  // End color (green)
+                    colors = listOf(
+                        Color(0xFF6EC1E4), // Soft blue
+                        Color(0xFF56E39F)  // Soft green
                     ),
-                    start = Offset(0f, 0f),                  // Top
-                    end = Offset(0f, Float.POSITIVE_INFINITY)
+                    start = Offset(0f, 0f),
+                    end = Offset(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
                 )
             ),
     ) {
@@ -46,106 +45,45 @@ fun HomeScreen(navController: NavHostController) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center // Menempatkan elemen-elemen di tengah layar
         ) {
+            Spacer(modifier = Modifier.height(100.dp))
 
-            Spacer(modifier = Modifier.height(1.dp))
-
-            Box(
+            // Placeholder Image
+            Image(
+                painter = painterResource(id = R.drawable.img), // Ganti dengan resource placeholder Anda
+                contentDescription = "Placeholder Image",
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .background(color = Color.Transparent)
-                    .align(Alignment.CenterHorizontally)
-            ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(4.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Row {
-                        Column(
-                            modifier = Modifier.padding(16.dp)
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.pic1),
-                                contentDescription = "split leaf",
-                                Modifier.size(67.dp, 82.dp),
-                                alignment = Alignment.Center
-                            )
-                            Text(
-                                text = "Ambil daun",
-                                fontSize = 8.sp,
-                                color = Color.Black,
-                                textAlign = TextAlign.Center,
-                                modifier = Modifier.width(67.dp)
-                            )
-                        }
-                        Column(
-                            modifier = Modifier.padding(16.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.pic2),
-                                contentDescription = "Scanner",
-                                Modifier.size(85.dp),
-                                alignment = Alignment.Center
-                            )
-                            Text(
-                                text = "Scan seladamu",
-                                fontSize = 8.sp,
-                                color = Color.Black,
-                                textAlign = TextAlign.Center,
-                                modifier = Modifier
-                                    .width(80.dp)
-                            )
-                        }
-                        Column(
-                            modifier = Modifier.padding(10.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.pic3),
-                                contentDescription = "diagnosis",
-                                Modifier.size(92.dp, 90.dp)
-                            )
-                            Text(
-                                text = "Lihat hasil",
-                                fontSize = 8.sp,
-                                color = Color.Black,
-                                textAlign = TextAlign.Center,
-                                modifier = Modifier.width(80.dp)
-                            )
-                        }
-                    }
+                    .size(400.dp) // Ukuran placeholder
+                    .padding(bottom = 16.dp)
+            )
 
-
-                    Spacer(modifier = Modifier.height(1.dp))
-                }
-            }
-
-            Spacer(modifier = Modifier.height(5.dp))
+            // Tombol Scan
             ScanButton(onImageCaptured = {}, navController = navController)
             Spacer(modifier = Modifier.height(10.dp))
+
+            // Tombol Chat
             Button(
                 onClick = {
                     // Aksi untuk berpindah ke ChatActivity
                     context.startActivity(Intent(context, ChatActivity::class.java))
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF61F878),
+                    containerColor = Color(0xFF7FFF4E),
                     contentColor = Color.Black
                 ),
+                shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp)
+                    .height(60.dp)
             ) {
                 Text(text = "Buka Chat")
             }
         }
     }
-
 }
+
 
 @Preview(showBackground = true, device = Devices.PIXEL_4)
 @Composable
