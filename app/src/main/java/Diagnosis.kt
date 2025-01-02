@@ -46,6 +46,7 @@ import com.skripsi.testapp.ui.createBitmapFromUri
 import org.bson.types.ObjectId
 import kotlin.toString
 
+
 @Composable
 fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: NavHostController) {
     val context = LocalContext.current
@@ -88,8 +89,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
 
     if (noTreeDialog.value) {
         AlertDialog(
-            onDismissRequest = { noTreeDialog.value = false
-                navController.navigate("home") },
+            onDismissRequest = { noTreeDialog.value = false; navController.navigate("home") },
             title = {
                 Text(
                     "Tidak ada selada yang terdeteksi!",
@@ -124,9 +124,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                     Text(
                         text = "Scan lagi",
                         modifier = Modifier
-                            .clickable {
-                                showDialog.value = true
-                            }
+                            .clickable { showDialog.value = true }
                             .padding(8.dp),
                         color = Color(0xFF61AF2B)
                     )
@@ -139,7 +137,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = rememberAsyncImagePainter(imageUri),
-            contentDescription = "Tangkap Gambar",
+            contentDescription = "Captured Image",
             modifier = Modifier
                 .fillMaxWidth()
                 .aspectRatio(1f)
@@ -155,36 +153,34 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
         ) {
             Image(
                 painter = painterResource(id = R.drawable.baseline_arrow_back_24),
-                contentDescription = "Kembali",
+                contentDescription = "Back",
                 modifier = Modifier
                     .align(Alignment.TopStart)
                     .size(30.dp)
-                    .clickable {
-                        showDialog.value = true
-                    }
+                    .clickable { showDialog.value = true }
             )
 
             Image(
                 painter = painterResource(id = R.drawable.baseline_exit_to_app_24),
-                contentDescription = "Back to home",
+                contentDescription = "Back to Home",
                 modifier = Modifier
                     .align(Alignment.TopEnd)
                     .size(30.dp)
-                    .clickable {
-                        navController.navigate("home")
-                    }
+                    .clickable { navController.navigate("home") }
             )
         }
 
         var disease by remember { mutableStateOf("No data available") }
+        var accuracy by remember { mutableStateOf(0f) }
 
         LaunchedEffect(predictionResult) {
             predictionResult?.let {
-                disease = identifyDisease(it)
+                val result = identifyDisease(it)
+                disease = result.first
+                accuracy = result.second // Accuracy percentage
             }
         }
 
-        // Membungkus konten dalam ScrollView untuk menghindari tombol tertutup
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -197,7 +193,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(16.dp)
-                    .verticalScroll(rememberScrollState()),  // Menambahkan scroll
+                    .verticalScroll(rememberScrollState()),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
@@ -214,12 +210,13 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                             }
                         }
                 )
+
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Row(modifier = Modifier.align(Alignment.Start)) {
                     Image(
                         painter = painterResource(id = R.drawable.baseline_check_circle_outline_24),
-                        contentDescription = "Cek",
+                        contentDescription = "Check",
                         Modifier.size(20.dp)
                     )
 
@@ -235,7 +232,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
 
                     Image(
                         painter = painterResource(id = if (isSaved.value) R.drawable.baseline_check_circle_24 else R.drawable.baseline_bookmark_border_24),
-                        contentDescription = "save",
+                        contentDescription = "Save",
                         modifier = Modifier
                             .size(30.dp)
                             .clickable(enabled = disease != "Healthy" && !isSaved.value) {
@@ -247,7 +244,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                     )
                 }
 
-                when(disease) {
+                when (disease) {
                     "Healthy" -> {
                         Text(
                             text = "Tanaman kamu sehat!",
@@ -256,11 +253,17 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                             fontWeight = Bold
                         )
                     }
-                    "Bacterial" -> { Bacterial(isFullScreen) }
-                    "Fungal" -> { Fungal(isFullScreen) }
-                    "Shepherd purse weeds" -> { Shepherd(isFullScreen)}
-                    "No Tree" -> {
-                        noTreeDialog.value = true
+                    "Bacterial" -> {
+                        Bacterial(isFullScreen, accuracy)
+                        Spacer(modifier = Modifier.height(8.dp))
+                    }
+                    "Fungal" -> {
+                        Fungal(isFullScreen, accuracy)
+                        Spacer(modifier = Modifier.height(8.dp))
+                    }
+                    "Shepherd purse weeds" -> {
+                        Shepherd(isFullScreen, accuracy)
+                        Spacer(modifier = Modifier.height(8.dp))
                     }
                     else -> {
                         Text(
@@ -294,15 +297,12 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                         containerColor = Color(0xFF7FFF4E),
                         contentColor = Color.Black
                     ),
-                    shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
+                    shape = RoundedCornerShape(16.dp),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(60.dp)
                 ) {
-                    Text(
-                        text = "Rekomendasi",
-                        fontSize = 16.sp
-                    )
+                    Text(text = "Rekomendasi", fontSize = 16.sp)
                 }
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -313,30 +313,32 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
     }
 }
 
-fun identifyDisease(predictionResult: FloatArray): String {
-    val keys = listOf("Bacterial", "Fungal","Healthy", "Shepherd purse weeds")
+
+fun identifyDisease(predictionResult: FloatArray): Pair<String, Float> {
+    val keys = listOf("Bacterial", "Fungal", "Healthy", "Shepherd purse weeds")
 
     if (predictionResult.isEmpty()) {
-        return "No data available"
+        return "No data available" to 0f
     }
 
     var max = 0
-
-    for (i  in predictionResult.indices) {
-        Log.d("PredictionResult", "New max found at index $i with value ${predictionResult[i]}")
+    for (i in predictionResult.indices) {
         if (predictionResult[i] > predictionResult[max]) {
             max = i
         }
     }
 
-    if (predictionResult[max] > 0.6)
-        return keys[max]
+    val confidence = predictionResult[max] * 100
+    if (confidence > 60) {
+        return keys[max] to confidence
+    }
 
-    return "No Tree"
+    return "No Tree" to 0f
 }
 
+
 @Composable
-fun Bacterial(isFullScreen: Boolean){
+fun Bacterial(isFullScreen: Boolean, accuracy: Float){
     val fullText = stringResource(id = R.string.bacterial_fulltext)
     val halfText = stringResource(id = R.string.bacterial_halftext)
     Column(
@@ -350,6 +352,7 @@ fun Bacterial(isFullScreen: Boolean){
             fontWeight = Bold,
             color = Color.Black
         )
+
         Text(
             text = "(Bacterial)",
             fontSize = 20.sp,
@@ -370,7 +373,11 @@ fun Bacterial(isFullScreen: Boolean){
                 color = Color.Black
             )
         }
-
+        Text(
+            text = "Akurasi: ${"%.2f".format(accuracy)}%",
+            fontSize = 14.sp,
+            color = Color.Black
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
@@ -391,7 +398,7 @@ fun Bacterial(isFullScreen: Boolean){
 }
 
 @Composable
-fun Fungal(isFullScreen: Boolean){
+fun Fungal(isFullScreen: Boolean, accuracy: Float){
     val fullText = stringResource(id = R.string.fungal_fulltext)
     val halfText = stringResource(id = R.string.fungal_fulltext)
 
@@ -426,7 +433,11 @@ fun Fungal(isFullScreen: Boolean){
                 color = Color.Black
             )
         }
-
+        Text(
+            text = "Akurasi: ${"%.2f".format(accuracy)}%",
+            fontSize = 14.sp,
+            color = Color.Black
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
@@ -447,7 +458,7 @@ fun Fungal(isFullScreen: Boolean){
 }
 
 @Composable
-fun Shepherd(isFullScreen: Boolean){
+fun Shepherd(isFullScreen: Boolean, accuracy: Float){
     val fullText = stringResource(id = R.string.shepherd_fulltext)
     val halfText = stringResource(id = R.string.shepherd_halftext)
 
@@ -482,7 +493,12 @@ fun Shepherd(isFullScreen: Boolean){
                 color = Color.Black
             )
         }
-
+        Text(
+            text = "Akurasi: ${"%.2f".format(accuracy)}%",
+            fontSize = 14.sp,
+            color = Color.Black,
+            fontWeight = Bold
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(

@@ -3,6 +3,9 @@ package com.skripsi.testapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.skripsi.testapp.ui.theme.skripsiTheme
@@ -39,9 +42,19 @@ class MainActivity : ComponentActivity() {
             isSplashScreenVisible.value = false
         }
 
-        if (isSplashScreenVisible.value) {
+        AnimatedVisibility(
+            visible = isSplashScreenVisible.value,
+            enter = fadeIn(),
+            exit = fadeOut()
+        ) {
             SplashScreen()
-        } else {
+        }
+
+        AnimatedVisibility(
+            visible = !isSplashScreenVisible.value,
+            enter = fadeIn(),
+            exit = fadeOut()
+        ) {
             // Request permissions at runtime
             val permissions = arrayOf(
                 Manifest.permission.CAMERA,
@@ -65,7 +78,6 @@ class MainActivity : ComponentActivity() {
                 Toast.makeText(this, "Permissions granted", Toast.LENGTH_SHORT).show()
             } else {
                 // Permissions are denied
-                Toast.makeText(this, "Permissions denied", Toast.LENGTH_SHORT).show()
             }
         }
     }
