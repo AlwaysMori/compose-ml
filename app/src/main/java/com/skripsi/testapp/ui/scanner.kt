@@ -81,7 +81,8 @@ fun ScanButton(onImageCaptured: (Uri?) -> Unit, navController: NavHostController
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black,
-                modifier = Modifier.padding(start = 16.dp)             )
+                modifier = Modifier.padding(start = 16.dp)
+            )
 
             Image(
                 painter = painterResource(id = R.drawable.pic_diagnose),

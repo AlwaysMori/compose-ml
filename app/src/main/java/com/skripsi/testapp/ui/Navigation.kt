@@ -24,6 +24,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
@@ -39,7 +40,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.skripsi.testapp.FeedbackScreen
 import com.skripsi.testapp.R
-
+import androidx.compose.ui.graphics.graphicsLayer
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
@@ -47,43 +48,24 @@ fun Navigation() {
 
     Scaffold(
         topBar = {
-            if (currentDestination != "result/{imageUri}/{classificationResult}" && currentDestination != "recommendations/{diseaseId}" && currentDestination != "feedback" && currentDestination != "help") {
-                TopAppBar(
-                    title = {
-                        Text("HiCare",
-                            color = Color.Black,
-                            fontWeight = FontWeight.Bold,)
-                    },
-                    navigationIcon = {
-                        Image(painter = painterResource(id = R.drawable.logo), // Replace with your image resource
-                            contentDescription = "App Logo",
-                            modifier = Modifier.padding(8.dp)
-                        )
-                    },
-
-                    actions = {
-                        Image(
-                            painter = painterResource(id = R.drawable.baseline_help_24), // Replace with your photo resource
-                            contentDescription = "help",
-                            modifier = Modifier
-                                .padding(16.dp)
-                                .clickable {
-                                    navController.navigate("help")
-                                }
-                        )
-                    },
-                    backgroundColor = Color(0xFF6EC1E4),
-                )
+            if (currentDestination != "result/{imageUri}/{classificationResult}" &&
+                currentDestination != "recommendations/{diseaseId}" &&
+                currentDestination != "feedback" &&
+                currentDestination != "help"
+            ) {
+                GradientTopAppBar(navController)
             }
         },
         bottomBar = {
-            if (currentDestination != "result/{imageUri}/{classificationResult}" && currentDestination != "recommendations/{diseaseId}" && currentDestination != "feedback" && currentDestination != "help") {
+            if (currentDestination != "result/{imageUri}/{classificationResult}" &&
+                currentDestination != "recommendations/{diseaseId}" &&
+                currentDestination != "feedback" &&
+                currentDestination != "help"
+            ) {
                 BottomNavigationBar(navController)
             }
         }
-
     ) { innerPadding ->
-        // Content of the Home Screen
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -92,6 +74,52 @@ fun Navigation() {
         ) {
             NavigationHost(navController)
         }
+    }
+}
+
+@Composable
+fun GradientTopAppBar(navController: NavController) {
+    Box(
+        modifier = Modifier
+            .background(
+                brush = Brush.horizontalGradient(
+                    colors = listOf(
+                        Color(0xFF6EC1E4), // Warna awal (biru muda)
+                        Color(0xFF56E39F)  // Warna akhir (hijau muda)
+                    )
+                )
+
+                )
+    ) {
+        TopAppBar(
+            title = {
+                Text(
+                    "HiCare",
+                    color = Color.White, // Warna teks
+                    fontWeight = FontWeight.Bold,
+                )
+            },
+            navigationIcon = {
+                Image(
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = "App Logo",
+                    modifier = Modifier.padding(8.dp)
+                )
+            },
+            actions = {
+                Image(
+                    painter = painterResource(id = R.drawable.baseline_help_24),
+                    contentDescription = "Help",
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .clickable {
+                            navController.navigate("help")
+                        }
+                )
+            },
+            backgroundColor = Color.Transparent, // Transparan untuk menampilkan gradien
+            elevation = 4.dp
+        )
     }
 }
 
@@ -129,6 +157,7 @@ fun NavigationHost(navController: NavHostController) {
         composable("help") {
             HelpScreen(navController)
         }
+
     }
 }
 

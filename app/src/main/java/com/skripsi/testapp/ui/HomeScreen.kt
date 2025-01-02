@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -63,27 +64,63 @@ fun HomeScreen(navController: NavHostController) {
             ScanButton(onImageCaptured = {}, navController = navController)
             Spacer(modifier = Modifier.height(10.dp))
 
-            // Tombol Chat
-            Button(
-                onClick = {
-                    // Aksi untuk berpindah ke ChatActivity
-                    context.startActivity(Intent(context, ChatActivity::class.java))
-                },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF7FFF4E),
-                    contentColor = Color.Black
-                ),
-                shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(60.dp)
+            // Row untuk tombol Chat dan Detail Penyakit
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "Buka Chat")
+                // Tombol Chat
+                Button(
+                    onClick = {
+                        // Aksi untuk berpindah ke ChatActivity
+                        context.startActivity(Intent(context, ChatActivity::class.java))
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF7FFF4E),
+                        contentColor = Color.Black
+                    ),
+                    shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(60.dp),
+                ) {
+                    Text(
+                        text = "Buka Chat",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black
+                    )
+                }
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                // Tombol Detail Penyakit
+                Button(
+                    onClick = {
+                        // Navigate to DetailListScreen
+                        navController.navigate("")
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF7FFF4E),
+                        contentColor = Color.Black
+                    ),
+                    shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(60.dp),
+                ) {
+                    Text(
+                        text = "Detail Penyakit",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black
+                    )
+                }
+
             }
         }
     }
 }
-
 
 @Preview(showBackground = true, device = Devices.PIXEL_4)
 @Composable
