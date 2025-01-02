@@ -39,21 +39,21 @@ fun ScanButton(onImageCaptured: (Uri?) -> Unit, navController: NavHostController
     if (showDialog.value) {
         ImagePicker(onImageCaptured = { uri ->
             uri?.let {
+                // Reset state sebelum memuat gambar baru
+                classificationResults.value = null
+                bitmap.value = null
                 bitmap.value = createBitmapFromUri(context, it)
                 bitmap.value?.let { bmp ->
-                    if (classificationResults.value == null) {
-                        classificationResults.value = classifyImage(context, bmp)
-                        Log.d("ScanButton", "Classification results: ${classificationResults.value}")
-                        navController.navigate(
-                            "result/${Uri.encode(it.toString())}/${classificationResults.value?.joinToString(",") ?: ""}"
-                        )
-                    }
+                    classificationResults.value = classifyImage(context, bmp)
+                    Log.d("ScanButton", "Classification results: ${classificationResults.value}")
+                    navController.navigate(
+                        "result/${Uri.encode(it.toString())}/${classificationResults.value?.joinToString(",") ?: ""}"
+                    )
                 }
             }
             showDialog.value = false
         }, onDismiss = { showDialog.value = false })
     }
-
     Button(
         onClick = {
             showDialog.value = true
@@ -99,11 +99,12 @@ fun ImagePicker(onImageCaptured: (Uri?) -> Unit, onDismiss: () -> Unit) {
     val context = LocalContext.current
     val imageUri = remember { mutableStateOf<Uri?>(null) }
     val galleryLauncher = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        imageUri.value = uri
         Log.d("ImagePicker", "Selected URI: $uri")
         onImageCaptured(uri)
     }
     val cameraLauncher = rememberLauncherForActivityResult(ActivityResultContracts.TakePicture()) { success: Boolean ->
-        if (success) {
+        if (success && imageUri.value != null) {
             Log.d("ImagePicker", "Captured URI: ${imageUri.value}")
             onImageCaptured(imageUri.value)
         } else {
@@ -158,9 +159,11 @@ fun chooseImageSource(context: Context, onOptionSelected: (String) -> Unit, onDi
 
 fun createImageUri(context: Context): Uri {
     val imagesDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    val image = File(imagesDir, "image.jpg")
+    val fileName = "image_${System.currentTimeMillis()}.jpg"
+    val image = File(imagesDir, fileName)
     return FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", image)
 }
+
 
 
 fun createBitmapFromUri(context: Context, uri: Uri): Bitmap? {
@@ -168,6 +171,7 @@ fun createBitmapFromUri(context: Context, uri: Uri): Bitmap? {
     val originalBitmap = BitmapFactory.decodeStream(inputStream)
     inputStream?.close()
 
-    Log.d("createBitmapFromUri", "Bitmap: $originalBitmap")
+    Log.d("createBitmapFromUri", "Bitmap diperbarui: $originalBitmap")
     return originalBitmap
 }
+

@@ -27,6 +27,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -90,7 +92,13 @@ fun RecommendationsScreen(diseaseId: String?, navController: NavHostController) 
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
-                        .background(Color(0xFFD0FFCF))
+                        .background(
+                            brush = Brush.linearGradient(
+                                colors = listOf(Color(0xFF6EC1E4), Color(0xFF56E39F)),
+                                start = Offset(0f, 0f),
+                                end = Offset(Float.POSITIVE_INFINITY, 0f)
+                            )
+                        )
                         .padding(12.dp),
                 ) {
                     Row {
