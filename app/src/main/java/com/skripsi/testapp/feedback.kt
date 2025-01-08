@@ -199,7 +199,7 @@ fun sendFeedbackEmail(context: Context, feedbackText: String, rating: Int) {
             put(JSONObject().apply {
                 put("to", JSONArray().apply {
                     put(JSONObject().apply {
-                        put("email", "nandaet16@gmail.com")
+                        put("email", "nanda.2111010082@darmajaya.ac.id")
                     })
                 })
                 put("subject", "Feedback from App")

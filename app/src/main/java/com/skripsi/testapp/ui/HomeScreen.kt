@@ -47,32 +47,28 @@ fun HomeScreen(navController: NavHostController) {
                 .fillMaxSize()
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center // Menempatkan elemen-elemen di tengah layar
+            verticalArrangement = Arrangement.Center
         ) {
             Spacer(modifier = Modifier.height(100.dp))
 
             // Placeholder Image
             Image(
-                painter = painterResource(id = R.drawable.img), // Ganti dengan resource placeholder Anda
+                painter = painterResource(id = R.drawable.img),
                 contentDescription = "Placeholder Image",
                 modifier = Modifier
-                    .size(400.dp) // Ukuran placeholder
+                    .size(400.dp)
                     .padding(bottom = 16.dp)
             )
 
-            // Tombol Scan
             ScanButton(onImageCaptured = {}, navController = navController)
             Spacer(modifier = Modifier.height(10.dp))
 
-            // Row untuk tombol Chat dan Detail Penyakit
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                // Tombol Chat
                 Button(
                     onClick = {
-                        // Aksi untuk berpindah ke ChatActivity
                         context.startActivity(Intent(context, ChatActivity::class.java))
                     },
                     colors = ButtonDefaults.buttonColors(
@@ -94,7 +90,6 @@ fun HomeScreen(navController: NavHostController) {
 
                 Spacer(modifier = Modifier.width(10.dp))
 
-                // Tombol Detail Penyakit
                 Button(
                     onClick = {
                         // Navigate to DetailListScreen

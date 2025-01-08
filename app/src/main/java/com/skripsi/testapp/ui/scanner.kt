@@ -39,7 +39,6 @@ fun ScanButton(onImageCaptured: (Uri?) -> Unit, navController: NavHostController
     if (showDialog.value) {
         ImagePicker(onImageCaptured = { uri ->
             uri?.let {
-                // Reset state sebelum memuat gambar baru
                 classificationResults.value = null
                 bitmap.value = null
                 bitmap.value = createBitmapFromUri(context, it)

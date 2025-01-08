@@ -4,4 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green_light2">#8FD3A6</color>"
     <color name="green_light">#B9F5D3</color>
+    <color name="blue_sky">#FF6EC1E4</color>
+    <color name="greensky">#FF56E39F</color>
+
+
+    0xFF56E39F
+    0xFF6EC1E4
 </resources>

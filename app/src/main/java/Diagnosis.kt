@@ -252,6 +252,21 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                             color = Color.Black,
                             fontWeight = Bold
                         )
+                        Spacer(modifier = Modifier.height(8.dp))
+
+                        Text(
+                            text = "Akurasi: ${"%.2f".format(accuracy)}%",
+                            fontSize = 14.sp,
+                            color = Color.Black
+                        )
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Text(
+                            text = "Tanaman kamu dalam kondisi prima dan tidak menunjukkan gejala penyakit.",
+                            fontSize = 14.sp,
+                            color = Color.Black
+                        )
                     }
                     "Bacterial" -> {
                         Bacterial(isFullScreen, accuracy)
@@ -302,7 +317,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                         .fillMaxWidth()
                         .height(60.dp)
                 ) {
-                    Text(text = "Rekomendasi", fontSize = 16.sp)
+                    Text(text = "Detail Penyakit", fontSize = 16.sp)
                 }
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -364,12 +379,12 @@ fun Bacterial(isFullScreen: Boolean, accuracy: Float){
             modifier = Modifier
                 .clip(RoundedCornerShape(4.dp))
                 .background(Color(0xFFF0F3F6))
-                .size(70.dp, 22.dp),
+                .size(70.dp, 30.dp),
             contentAlignment = Alignment.Center
         ){
             Text(
-                text = "soil-borne",
-                fontSize = 12.sp,
+                text = "Lactuca sativa",
+                fontSize = 8.sp,
                 color = Color.Black
             )
         }
@@ -414,7 +429,7 @@ fun Fungal(isFullScreen: Boolean, accuracy: Float){
             color = Color.Black
         )
         Text(
-            text = "(cordana musae)",
+            text = "(Jamur)",
             fontSize = 20.sp,
             fontWeight = Bold,
             color = Color.Black
@@ -428,8 +443,8 @@ fun Fungal(isFullScreen: Boolean, accuracy: Float){
             contentAlignment = Alignment.Center
         ){
             Text(
-                text = "soil-borne",
-                fontSize = 12.sp,
+                text = "Lactuca sativa",
+                fontSize = 8.sp,
                 color = Color.Black
             )
         }
@@ -474,7 +489,7 @@ fun Shepherd(isFullScreen: Boolean, accuracy: Float){
             color = Color.Black
         )
         Text(
-            text = "(Pseudocercospora fijiensis or Pseudocercospora musae)",
+            text = "(Capsella bursa-pastoris)",
             fontSize = 20.sp,
             fontWeight = Bold,
             color = Color.Black
@@ -488,8 +503,8 @@ fun Shepherd(isFullScreen: Boolean, accuracy: Float){
             contentAlignment = Alignment.Center
         ){
             Text(
-                text = "soil-borne",
-                fontSize = 12.sp,
+                text = "Lactuca sativa",
+                fontSize = 8.sp,
                 color = Color.Black
             )
         }

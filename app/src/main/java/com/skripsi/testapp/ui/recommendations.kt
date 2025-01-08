@@ -292,7 +292,7 @@ fun Fungal() {
             .padding(16.dp)
     ) {
         Text(
-            "Pengendalian dengan Bahan Kimia",
+            "Penyebab",
             fontSize = 18.sp,
             fontWeight = Bold,
             color = Color.Black,
@@ -308,7 +308,7 @@ fun Fungal() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            "Praktik budidaya",
+            "Pengendalian",
             fontSize = 18.sp,
             fontWeight = Bold,
             color = Color.Black,

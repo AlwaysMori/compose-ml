@@ -20,6 +20,7 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -56,10 +57,8 @@ fun GeminiChatView(
 
     val keyboardController = LocalSoftwareKeyboardController.current
 
-    // Don't request focus at first, to avoid keyboard showing automatically
     val requestFocus = remember { mutableStateOf(false) }
 
-    // Delay focus request so that keyboard doesn't show on the first render
     LaunchedEffect(Unit) {
         requestFocus.value = true
     }
@@ -149,7 +148,7 @@ fun GeminiChatView(
             },
             isLoading.value,
             appThemColor,
-            requestFocus = requestFocus.value // Pass the requestFocus flag
+            requestFocus = requestFocus.value
         )
     }
 }
@@ -161,8 +160,7 @@ fun ChatBubble(
     appThemeColor: Color
 ) {
     val bubbleColor = if (memberType == MemberType.USER) {
-        Color(0xFFB9F5D3)
-    } else {
+        colorResource(id = R.color.greensky)    } else {
         appThemeColor
     }
 
@@ -234,7 +232,6 @@ fun RoundedCornerTextFieldWithSend(
     val textState = remember { mutableStateOf("") }
     val keyboardController = LocalSoftwareKeyboardController.current
 
-    // Only request focus if the requestFocus flag is true
     LaunchedEffect(requestFocus) {
         if (requestFocus) {
             focusRequester.requestFocus()
@@ -252,7 +249,7 @@ fun RoundedCornerTextFieldWithSend(
                 .focusRequester(focusRequester),
             shape = RoundedCornerShape(12.dp),
             colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = Color(0xFFB9F5D3),
+                focusedBorderColor = colorResource(id = R.color.greensky),
                 focusedLabelColor = Color.Black,
                 unfocusedBorderColor = Color.Green,
                 unfocusedLabelColor = Color.Green,

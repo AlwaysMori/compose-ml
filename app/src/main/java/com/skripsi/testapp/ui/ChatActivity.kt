@@ -16,21 +16,17 @@ class ChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inisialisasi binding sebelum setContentView
         _binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Konfigurasi UI
         window.statusBarColor = getColor(R.color.white)
         hideNavigationBar()
 
-        // Tentukan konteks percakapan berdasarkan bahasa
         val chatContextText = getChatContext()
 
-        // Setel ComposeView
         binding.composeView.setContent {
             GeminiChatView(
-                apiKey = "AIzaSyDQKICc9Ij_UMKa32lAJnv7SbEjY-8ihyI",
-                appThemColor = colorResource(R.color.green_light),
+                apiKey = "",
+                appThemColor = colorResource(R.color.greensky),
                 chatContext = listOf(
                     GeminiContent(
                         role = "user",
@@ -57,7 +53,7 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        _binding = null // Bersihkan binding untuk mencegah memory leak
+        _binding = null
     }
 
     private fun getChatContext(): String {
