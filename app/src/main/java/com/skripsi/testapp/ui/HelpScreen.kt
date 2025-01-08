@@ -17,6 +17,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
@@ -41,7 +43,13 @@ fun HelpScreen(navController: NavHostController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
-                        .background(Color(0xFFD0FFCF))
+                        .background(
+                            brush = Brush.linearGradient(
+                                colors = listOf(Color(0xFF6EC1E4), Color(0xFF56E39F)),
+                                start = Offset(0f, 0f),
+                                end = Offset(Float.POSITIVE_INFINITY, 0f)
+                            )
+                        )
                         .padding(12.dp),
                 ) {
                     Row {
@@ -92,7 +100,7 @@ fun HelpScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Lorem",
+                            text = "Aplikasi ini digunakan untuk mendeteksi penyakit pada tanaman selada dengan cepat dan akurat. Hal ini dapat membantu petani dalam mengidentifikasi masalah dan mengambil tindakan yang diperlukan untuk menyelamatkan tanaman.",
                             fontSize = 16.sp,
                             color = Color(0xFF585858)
                         )
@@ -106,7 +114,7 @@ fun HelpScreen(navController: NavHostController) {
                         Spacer(modifier = Modifier.height(8.dp))
 
                         Text(
-                            text = "Lorem",
+                            text = "Pastikan foto tanaman selada diambil dengan pencahayaan yang baik, tanpa bayangan yang mengganggu, dan fokus pada area daun yang terkena masalah. Hindari foto yang buram atau terlalu jauh dari objek.",
                             fontSize = 16.sp,
                             color = Color(0xFF585858)
                         )
@@ -156,27 +164,7 @@ fun HelpScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Lorem",
-                            fontSize = 16.sp,
-                            color = Color(0xFF585858)
-                        )
-                        Text(
-                            text = "Lorem",
-                            fontSize = 16.sp,
-                            color = Color(0xFF585858)
-                        )
-                        Text(
-                            text = "Lorem",
-                            fontSize = 16.sp,
-                            color = Color(0xFF585858)
-                        )
-                        Text(
-                            text = "Lorem",
-                            fontSize = 16.sp,
-                            color = Color(0xFF585858)
-                        )
-                        Text(
-                            text = "Lorem",
+                            text = "Pastikan foto tanaman selada diambil dengan pencahayaan yang baik, tanpa bayangan yang mengganggu, dan fokus pada area daun yang terkena masalah. Hindari foto yang buram atau terlalu jauh dari objek.",
                             fontSize = 16.sp,
                             color = Color(0xFF585858)
                         )
@@ -191,20 +179,11 @@ fun HelpScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Lorem",
+                            text = "Jika aplikasi tidak memberikan hasil, pastikan gambar yang diunggah memiliki kualitas yang baik dan sesuai dengan format yang didukung. Jika masalah tetap terjadi, hubungi tim dukungan teknis untuk bantuan lebih lanjut.",
                             fontSize = 16.sp,
                             color = Color(0xFF585858)
                         )
-                        Text(
-                            text = "Lorem",
-                            fontSize = 16.sp,
-                            color = Color(0xFF585858)
-                        )
-                        Text(
-                            text = "Lorem",
-                            fontSize = 16.sp,
-                            color = Color(0xFF585858)
-                        )
+
 
                         Spacer(modifier = Modifier.height(16.dp))
 
@@ -216,10 +195,11 @@ fun HelpScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Lorem",
+                            text = "Aplikasi ini dapat digunakan tanpa koneksi internet karena menggunakan TensorFlow Lite. Model kecerdasan buatan telah diintegrasikan langsung ke dalam aplikasi untuk menganalisis gambar secara lokal.",
                             fontSize = 16.sp,
                             color = Color(0xFF585858)
                         )
+
 
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
@@ -230,7 +210,7 @@ fun HelpScreen(navController: NavHostController) {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Lorem",
+                            text = "Aplikasi ini memiliki tingkat akurasi yang tinggi dalam mendeteksi penyakit, dengan model kecerdasan buatan yang telah dilatih menggunakan ribuan data gambar. Namun, hasil diagnosis tetap memerlukan verifikasi manual oleh pengguna.",
                             fontSize = 16.sp,
                             color = Color(0xFF585858)
                         )

@@ -33,6 +33,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -317,7 +318,9 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
                         .fillMaxWidth()
                         .height(60.dp)
                 ) {
-                    Text(text = "Detail Penyakit", fontSize = 16.sp)
+                    Text(text = "Detail Penyakit",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp)
                 }
 
                 Spacer(modifier = Modifier.height(8.dp))

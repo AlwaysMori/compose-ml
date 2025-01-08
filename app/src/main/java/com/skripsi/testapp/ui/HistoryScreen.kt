@@ -50,20 +50,20 @@ fun HistoryScreen(navController : NavHostController, diseaseViewModel: DiseaseVi
     if (deleteAllDialog.value) {
         AlertDialog(
             onDismissRequest = { deleteAllDialog.value = false },
-            title = { Text(text = "Delete All Items?", color = Color.Black) },
+            title = { Text(text = "Hapus semua riwayat?", color = Color.Black) },
             confirmButton = {
                 TextButton(onClick = {
                     deleteAllDialog.value = false
                     diseaseViewModel.deleteAllDiseases()
                 }) {
-                    Text("Confirm", color = Color(0xFF61AF2B))
+                    Text("Konfirmasi", color = Color(0xFF61AF2B))
                 }
             },
             dismissButton = {
                 TextButton(onClick = {
                     deleteAllDialog.value = false
                 }) {
-                    Text("Cancel", color = Color(0xFF61AF2B))
+                    Text("Batal", color = Color(0xFF61AF2B))
                 }
             }
         )

@@ -81,6 +81,7 @@ dependencies {
     implementation(libs.tensorflow.lite.gpu)
     implementation(libs.generativeai)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.benchmark.macro)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

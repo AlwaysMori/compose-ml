@@ -183,7 +183,8 @@ fun RecommendationsScreen(diseaseId: String?, navController: NavHostController) 
                             Text(
                                 text = "Detail penyakit",
                                 fontSize = 16.sp,
-                                color = Color(0xFF585858),
+                                color = Color.Black,
+                                fontWeight = Bold,
                                 modifier = Modifier.padding(16.dp)
                             )
                         }
@@ -193,7 +194,7 @@ fun RecommendationsScreen(diseaseId: String?, navController: NavHostController) 
                     Divider(color = Color.LightGray, thickness = 1.dp)
 
                     Text(
-                        "Rekomendasi",
+                        "Detail Penyakit",
                         fontSize = 20.sp,
                         fontWeight = Bold,
                         color = Color.Black,
@@ -252,54 +253,14 @@ fun Bacterial(){
             .padding(16.dp)
     ) {
         Text(
-            "Pengendalian dengan Bahan Kimia",
+            "Penyebab dan Akibat",
             fontSize = 18.sp,
             fontWeight = Bold,
             color = Color.Black,
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            stringResource(id = R.string.bahan_kimia_bacterial),
-            fontSize = 16.sp,
-            color = Color(0xFF585858),
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-        Divider(color = Color.LightGray, thickness = 1.dp)
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(
-            "Praktik budidaya",
-            fontSize = 18.sp,
-            fontWeight = Bold,
-            color = Color.Black,
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
-            stringResource(id = R.string.bahan_tradisional_bacterial),
-            fontSize = 16.sp,
-            color = Color(0xFF585858)
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-        Divider(color = Color.LightGray, thickness = 1.dp)
-    }
-}
-
-@Composable
-fun Fungal() {
-    Column(
-        modifier = Modifier
-            .padding(16.dp)
-    ) {
-        Text(
-            "Penyebab",
-            fontSize = 18.sp,
-            fontWeight = Bold,
-            color = Color.Black,
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            stringResource(id = R.string.bahan_kimia_fungal),
+            stringResource(id = R.string.penyebab_bacterial),
             fontSize = 16.sp,
             color = Color(0xFF585858),
         )
@@ -316,7 +277,47 @@ fun Fungal() {
         Spacer(modifier = Modifier.height(8.dp))
 
         Text(
-            stringResource(id = R.string.bahan_tradisional_fungal),
+            stringResource(id = R.string.pengendalian_bacterial),
+            fontSize = 16.sp,
+            color = Color(0xFF585858)
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Divider(color = Color.LightGray, thickness = 1.dp)
+    }
+}
+
+@Composable
+fun Fungal() {
+    Column(
+        modifier = Modifier
+            .padding(16.dp)
+    ) {
+        Text(
+            "Penyebab dan Akibat",
+            fontSize = 18.sp,
+            fontWeight = Bold,
+            color = Color.Black,
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            stringResource(id = R.string.penyebab_fungal),
+            fontSize = 16.sp,
+            color = Color(0xFF585858),
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Divider(color = Color.LightGray, thickness = 1.dp)
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            "Pengendalian",
+            fontSize = 18.sp,
+            fontWeight = Bold,
+            color = Color.Black,
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            stringResource(id = R.string.pengendalian_fungal),
             fontSize = 16.sp,
             color = Color(0xFF585858)
         )
@@ -332,14 +333,14 @@ fun Shepherd() {
             .padding(16.dp)
     ) {
         Text(
-            "Pengendalian dengan Bahan Kimia",
+            "Penyebab dan Akibat",
             fontSize = 18.sp,
             fontWeight = Bold,
             color = Color.Black,
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            stringResource(id = R.string.bahan_kimia_shepherd),
+            stringResource(id = R.string.penyebab_shepherd),
             fontSize = 16.sp,
             color = Color(0xFF585858),
         )
@@ -348,7 +349,7 @@ fun Shepherd() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            "Praktik budidaya",
+            "Pengendalian",
             fontSize = 18.sp,
             fontWeight = Bold,
             color = Color.Black,
@@ -356,7 +357,7 @@ fun Shepherd() {
         Spacer(modifier = Modifier.height(8.dp))
 
         Text(
-            stringResource(id = R.string.bahan_tradisional_shepherd),
+            stringResource(id = R.string.pengendalian_shepherd),
             fontSize = 16.sp,
             color = Color(0xFF585858)
         )

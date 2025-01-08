@@ -21,12 +21,37 @@
     <string name="apa_yang_ingin_anda_ketahui">tes</string>
     <string name="specialist_text">tes</string>
 
-    <string name="bahan_kimia_bacterial">Pengendalian kontaminasi bakteri pada selada dengan bahan kimia melibatkan penggunaan larutan desinfektan seperti asam sitrat, cuka, atau larutan garam. Kombinasi penggunaan bahan kimia dengan teknologi modern, seperti radiasi UV-C, terbukti efektif mengurangi kontaminasi mikroorganisme dan memperpanjang umur simpan selada. Beberapa penelitian juga menunjukkan bahwa penggunaan larutan antimikroba berbasis peroxyacetic acid atau air elektrolisis netral dapat menghambat pertumbuhan bakteri patogen pada permukaan selada. Pendekatan ini memberikan solusi praktis untuk meningkatkan keamanan produk dalam skala komersial.(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
-    <string name="bahan_tradisional_bacterial">praktik mencuci selada dengan air garam atau air cuka sering digunakan untuk mengurangi kontaminasi bakteri. Selain itu, penggunaan metode manual seperti pemilihan daun yang tampak rusak atau terkontaminasi juga menjadi langkah sederhana namun penting. Penggunaan teknik pembilasan berulang dengan air bersih diikuti dengan pengeringan menggunakan kain bersih atau angin alami membantu mengurangi jumlah bakteri. Peningkatan kesadaran akan kebersihan selama proses produksi dan penanganan juga merupakan bagian dari pendekatan tradisional untuk mencegah kontaminasi.(Chan et al., 2024; Amponsah-Doku et al., 2010).(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
+    <string name="penyebab_bacterial">Pengendalian kontaminasi bakteri pada selada dengan bahan kimia melibatkan penggunaan larutan desinfektan seperti asam sitrat, cuka, atau larutan garam. Kombinasi penggunaan bahan kimia dengan teknologi modern, seperti radiasi UV-C, terbukti efektif mengurangi kontaminasi mikroorganisme dan memperpanjang umur simpan selada. Beberapa penelitian juga menunjukkan bahwa penggunaan larutan antimikroba berbasis peroxyacetic acid atau air elektrolisis netral dapat menghambat pertumbuhan bakteri patogen pada permukaan selada. Pendekatan ini memberikan solusi praktis untuk meningkatkan keamanan produk dalam skala komersial.(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
+    <string name="pengendalian_bacterial">praktik mencuci selada dengan air garam atau air cuka sering digunakan untuk mengurangi kontaminasi bakteri. Selain itu, penggunaan metode manual seperti pemilihan daun yang tampak rusak atau terkontaminasi juga menjadi langkah sederhana namun penting. Penggunaan teknik pembilasan berulang dengan air bersih diikuti dengan pengeringan menggunakan kain bersih atau angin alami membantu mengurangi jumlah bakteri. Peningkatan kesadaran akan kebersihan selama proses produksi dan penanganan juga merupakan bagian dari pendekatan tradisional untuk mencegah kontaminasi.(Chan et al., 2024; Amponsah-Doku et al., 2010).(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
 
-    <string name="bahan_kimia_fungal">Lorem Ipsum</string>
-    <string name="bahan_tradisional_fungal">Lorem Ipsum</string>
+    <string name="penyebab_fungal">Lorem Ipsum</string>
+    <string name="pengendalian_fungal">Lorem Ipsum</string>
 
-    <string name="bahan_kimia_shepherd">tes</string>
-    <string name="bahan_tradisional_shepherd">tes</string>
+    <string name="penyebab_shepherd">Penyebab:\n
+    \nCapsella bursa-pastoris dapat menjadi inang bagi berbagai hama seperti serangga, nematoda, jamur, virus, dan bakteri,
+    yang memungkinkan penyebaran penyakit ke tanaman budidaya di sekitarnya.
+    \nBenihnya memiliki lapisan mukilaginosa yang memudahkan penempelan pada kendaraan, alat, hewan, atau manusia,
+    sehingga penyebaran jarak jauh sangat efisien.
+    \nTanaman ini juga memiliki kemampuan adaptasi tinggi terhadap berbagai kondisi lingkungan,
+    termasuk tanah terganggu dan iklim subtropis hingga subarktik.\n\n
+
+    \nAkibat:\n
+    \nKeberadaan Capsella bursa-pastoris dapat menyebabkan kerugian ekonomi pada sektor pertanian,
+    terutama karena persaingan sumber daya dan kerusakan dari hama yang diinkubasinya.
+    \nTanaman ini juga berbahaya bagi hewan ternak, karena dapat menyebabkan keracunan nitrit pada babi
+    dan keracunan sulfur pada sapi yang berujung pada penyakit neurologis.
+    \nSelain itu, kemampuan benih untuk membentuk bank benih besar dan bertahan lama di tanah
+    membuat pengendalian gulma ini menjadi tantangan besar.\n
+    \nSumber : ( The Biology of Canadian Weeds.159. Capsella bursa-pastoris (L.)Medik.)</string>
+    <string name="pengendalian_shepherd">
+    1. Penggunaan Herbisida:
+       \n- Capsella bursa-pastoris umumnya efektif dikendalikan dengan herbisida pra-tumbuh (soil-applied)
+         dan pasca-tumbuh (foliar/post-emergence) yang sesuai dengan jenis tanaman utama.\n
+    \n2. Pengelolaan Lahan:
+       \n- Pengolahan tanah secara rutin dapat mengurangi bank benih gulma ini, karena bijinya lebih cepat kehilangan viabilitas
+         pada tanah yang terganggu dibandingkan tanah yang tidak diolah.
+       \n- Rotasi tanaman dan tumpang sari dapat mengurangi kelangsungan hidup gulma.\n
+    \n3. Pemantauan dan Pembersihan Alat:
+       \n- Membersihkan peralatan dan kendaraan setelah digunakan di area terinfestasi mencegah penyebaran gulma ke area lain.\n
+    \nSumber : ( The Biology of Canadian Weeds.159. Capsella bursa-pastoris (L.)Medik.)</string>
 </resources>

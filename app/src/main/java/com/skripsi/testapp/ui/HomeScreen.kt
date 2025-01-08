@@ -53,7 +53,7 @@ fun HomeScreen(navController: NavHostController) {
 
             // Placeholder Image
             Image(
-                painter = painterResource(id = R.drawable.img),
+                painter = painterResource(id = R.drawable.bgbg),
                 contentDescription = "Placeholder Image",
                 modifier = Modifier
                     .size(400.dp)
@@ -93,8 +93,7 @@ fun HomeScreen(navController: NavHostController) {
                 Button(
                     onClick = {
                         // Navigate to DetailListScreen
-                        navController.navigate("")
-                    },
+                        navController.navigate("list")                    },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xFF7FFF4E),
                         contentColor = Color.Black
