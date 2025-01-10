@@ -92,8 +92,9 @@ fun HomeScreen(navController: NavHostController) {
 
                 Button(
                     onClick = {
-                        // Navigate to DetailListScreen
-                        navController.navigate("list")                    },
+                        val intent = Intent(context, ListActivity::class.java)
+                        context.startActivity(intent)
+                    },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xFF7FFF4E),
                         contentColor = Color.Black
@@ -110,6 +111,7 @@ fun HomeScreen(navController: NavHostController) {
                         color = Color.Black
                     )
                 }
+
 
             }
         }

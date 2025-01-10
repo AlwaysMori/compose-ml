@@ -2,7 +2,6 @@
     <string name="app_name">Skripsi</string>
 
 
-
     <!-- Bacterial -->
     <string name="bacterial_fulltext">Kontaminasi bakteri pada selada disebabkan oleh faktor seperti penggunaan air limbah tidak terolah, pupuk kandang tanpa pengolahan yang tepat, irigasi overhead, dan morfologi daun yang luas. Penanganan pasca panen yang tidak higienis, seperti pencucian dengan air terkontaminasi dan penyimpanan dalam wadah kotor, juga berkontribusi. Di pasar dan restoran makanan jalanan, air penyegaran yang jarang diganti dan praktik penanganan yang tidak higienis memperburuk kualitas mikrobiologi selada (Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
     <string name="bacterial_halftext">Kontaminasi bakteri pada selada disebabkan oleh faktor seperti penggunaan air limbah tidak terolah, pupuk kandang tanpa pengolahan yang tepat, irigasi overhead, dan morfologi daun yang luas. Penanganan pasca panen yang tidak higienis, seperti pencucian dengan air terkontaminasi dan penyimpanan dalam wadah kotor, juga berkontribusi. Di pasar dan restoran makanan jalanan, air penyegaran yang jarang diganti dan praktik penanganan yang tidak higienis memperburuk kualitas mikrobiologi selada (Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
@@ -54,4 +53,6 @@
     \n3. Pemantauan dan Pembersihan Alat:
        \n- Membersihkan peralatan dan kendaraan setelah digunakan di area terinfestasi mencegah penyebaran gulma ke area lain.\n
     \nSumber : ( The Biology of Canadian Weeds.159. Capsella bursa-pastoris (L.)Medik.)</string>
+    <string name="back">Kembali</string>
+    <string name="list_activity_title">DAFTAR PENYAKIT</string>
 </resources>
