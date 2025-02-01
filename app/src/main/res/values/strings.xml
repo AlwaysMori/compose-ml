@@ -23,8 +23,23 @@
     <string name="penyebab_bacterial">Pengendalian kontaminasi bakteri pada selada dengan bahan kimia melibatkan penggunaan larutan desinfektan seperti asam sitrat, cuka, atau larutan garam. Kombinasi penggunaan bahan kimia dengan teknologi modern, seperti radiasi UV-C, terbukti efektif mengurangi kontaminasi mikroorganisme dan memperpanjang umur simpan selada. Beberapa penelitian juga menunjukkan bahwa penggunaan larutan antimikroba berbasis peroxyacetic acid atau air elektrolisis netral dapat menghambat pertumbuhan bakteri patogen pada permukaan selada. Pendekatan ini memberikan solusi praktis untuk meningkatkan keamanan produk dalam skala komersial.(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
     <string name="pengendalian_bacterial">praktik mencuci selada dengan air garam atau air cuka sering digunakan untuk mengurangi kontaminasi bakteri. Selain itu, penggunaan metode manual seperti pemilihan daun yang tampak rusak atau terkontaminasi juga menjadi langkah sederhana namun penting. Penggunaan teknik pembilasan berulang dengan air bersih diikuti dengan pengeringan menggunakan kain bersih atau angin alami membantu mengurangi jumlah bakteri. Peningkatan kesadaran akan kebersihan selama proses produksi dan penanganan juga merupakan bagian dari pendekatan tradisional untuk mencegah kontaminasi.(Chan et al., 2024; Amponsah-Doku et al., 2010).(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
 
-    <string name="penyebab_fungal">Lorem Ipsum</string>
-    <string name="pengendalian_fungal">Lorem Ipsum</string>
+    <string name="penyebab_fungal">Penyebab\n
+        \nPenyakit fungal pada selada, seperti Fusarium wilt, disebabkan oleh jamur tanah Fusarium oxysporum f. sp. lactucae, yang menginfeksi tanaman melalui akar dan menyebar di jaringan xylem. Jamur ini menghambat penyerapan air dan nutrisi, menyebabkan tanaman layu dan mati. Selain Fusarium, penyakit fungal lain seperti Sclerotinia sclerotiorum (busuk putih) dan Botrytis cinerea (busuk abu-abu) juga menyerang selada, terutama dalam kondisi lembab dan hangat.\n
+    \nAkibat\n
+\nPenyakit fungal pada selada menyebabkan gejala seperti menguningnya daun, nekrosis, layu, dan perubahan warna pada akar. Infeksi jamur dapat menyebabkan kerdilnya tanaman, penurunan kualitas hasil panen, dan kematian tanaman. Dampak ekonomi yang signifikan terjadi karena kerugian hasil panen dan biaya pengendalian yang tinggi.\n
+    \nSumber: (Matheron, M. E. (2015). Biology and Management of Fusarium Wilt of Lettuce. University of Arizona Cooperative Extension.)</string>
+    <string name="pengendalian_fungal">Penggunaan Varietas Tahan:\n
+\nBeberapa varietas romaine (seperti BCS 9021, King Louie, dan Slugger) menunjukkan ketahanan atau toleransi terhadap Fusarium wilt. Varietas crisphead, green leaf, red leaf, dan butterhead umumnya rentan terhadap penyakit ini.\n
+
+
+
+\nSanitasi:\n
+\nMencegah penyebaran jamur dari lahan terinfeksi ke lahan sehat dengan membersihkan peralatan pertanian, pipa irigasi, dan alas kaki pekerja. Sanitasi harus dilakukan bahkan jika lahan yang terkontaminasi ditanami tanaman selain selada.\n
+
+\nSolarisasi Tanah:\n
+\nMenutupi tanah lembab dengan plastik bening selama 30 hari di musim panas dapat mengurangi populasi jamur dan insiden penyakit hingga 42-91%.
+
+\nSumber: (Matheron, M. E. (2015). Biology and Management of Fusarium Wilt of Lettuce. University of Arizona Cooperative Extension.)</string>
 
     <string name="penyebab_shepherd">Penyebab:\n
     \nCapsella bursa-pastoris dapat menjadi inang bagi berbagai hama seperti serangga, nematoda, jamur, virus, dan bakteri,
