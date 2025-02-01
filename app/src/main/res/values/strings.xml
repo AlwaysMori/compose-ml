@@ -14,14 +14,34 @@
     <string name="healthy_fulltext">Healthy Lettuce</string>
     <string name="healthy_halftext">Healthy</string>
 
-    <!-- Shepherd's Purse Weeds -->
     <string name="shepherd_fulltext">shepherd</string>
     <string name="shepherd_halftext">shepherd</string>
     <string name="apa_yang_ingin_anda_ketahui">tes</string>
     <string name="specialist_text">tes</string>
 
-    <string name="penyebab_bacterial">Pengendalian kontaminasi bakteri pada selada dengan bahan kimia melibatkan penggunaan larutan desinfektan seperti asam sitrat, cuka, atau larutan garam. Kombinasi penggunaan bahan kimia dengan teknologi modern, seperti radiasi UV-C, terbukti efektif mengurangi kontaminasi mikroorganisme dan memperpanjang umur simpan selada. Beberapa penelitian juga menunjukkan bahwa penggunaan larutan antimikroba berbasis peroxyacetic acid atau air elektrolisis netral dapat menghambat pertumbuhan bakteri patogen pada permukaan selada. Pendekatan ini memberikan solusi praktis untuk meningkatkan keamanan produk dalam skala komersial.(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
-    <string name="pengendalian_bacterial">praktik mencuci selada dengan air garam atau air cuka sering digunakan untuk mengurangi kontaminasi bakteri. Selain itu, penggunaan metode manual seperti pemilihan daun yang tampak rusak atau terkontaminasi juga menjadi langkah sederhana namun penting. Penggunaan teknik pembilasan berulang dengan air bersih diikuti dengan pengeringan menggunakan kain bersih atau angin alami membantu mengurangi jumlah bakteri. Peningkatan kesadaran akan kebersihan selama proses produksi dan penanganan juga merupakan bagian dari pendekatan tradisional untuk mencegah kontaminasi.(Chan et al., 2024; Amponsah-Doku et al., 2010).(Chan et al., 2024; Amponsah-Doku et al., 2010).</string>
+    <string name="penyebab_bacterial">Penyebab:\n
+\nPenyakit Bacterial Leaf Spot (BLS) pada selada disebabkan oleh bakteri Xanthomonas hortorum pv. vitians (Xhv). Bakteri ini berbentuk batang, gram negatif, aerobik, dan memiliki flagela polar. Bakteri ini dapat bertahan dan menyebar melalui benih yang terinfeksi, percikan air hujan, atau irigasi sprinkler. Kondisi lingkungan yang lembab dan suhu dingin (50–75°F) sangat mendukung perkembangan penyakit ini.\n
+    \nAkibat:\n
+    \nGejala pada Daun: Muncul bercak-bercak kecil berair yang kemudian menyatu menjadi lesi nekrotik berwarna cokelat hingga hitam. Lesi ini dapat menjadi kering dan bertekstur seperti kertas.\n
+
+\nDampak pada Tanaman: Infeksi berat dapat menyebabkan kehilangan hasil panen hingga 100%, seperti yang terjadi pada wabah di Florida tahun 2010 yang mengakibatkan kehilangan hasil sebesar 50%.\n
+
+\nDampak Pascapanen: Kerusakan pascapanen akibat kolonisasi sekunder oleh patogen lain juga menjadi masalah serius.\n
+            \nSumber: (PennState Extension. Lettuce Bacterial Leaf Spot.)
+</string>
+    <string name="pengendalian_bacterial">Sanitasi Lahan:\n
+
+\nBersihkan sisa tanaman dan gulma yang dapat menjadi inang bagi bakteri untuk mengurangi sumber infeksi.\n
+
+\nPengelolaan Irigasi:\n
+
+\nHindari penggunaan irigasi sprinkler untuk mengurangi penyebaran bakteri melalui percikan air.\n
+
+\nAplikasi Bakterisida:\n
+\nGunakan tembaga hidroksida untuk mengendalikan penyebaran bakteri setelah deteksi pertama.\n
+
+        \nSumber: (PennState Extension. Lettuce Bacterial Leaf Spot.)
+</string>
 
     <string name="penyebab_fungal">Penyebab\n
         \nPenyakit fungal pada selada, seperti Fusarium wilt, disebabkan oleh jamur tanah Fusarium oxysporum f. sp. lactucae, yang menginfeksi tanaman melalui akar dan menyebar di jaringan xylem. Jamur ini menghambat penyerapan air dan nutrisi, menyebabkan tanaman layu dan mati. Selain Fusarium, penyakit fungal lain seperti Sclerotinia sclerotiorum (busuk putih) dan Botrytis cinerea (busuk abu-abu) juga menyerang selada, terutama dalam kondisi lembab dan hangat.\n

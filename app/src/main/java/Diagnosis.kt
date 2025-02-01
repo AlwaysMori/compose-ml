@@ -33,7 +33,6 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -46,8 +45,16 @@ import com.skripsi.testapp.ui.ScanButton
 import com.skripsi.testapp.ui.createBitmapFromUri
 import org.bson.types.ObjectId
 import kotlin.toString
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 
 
+val poppinsFamily = FontFamily(
+    Font(R.font.poppins_regular), // Font regular
+    Font(R.font.poppins_bold, weight = FontWeight.Bold),// Font bold
+    Font(R.font.poppins_light, weight = FontWeight.Light)
+)
 @Composable
 fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: NavHostController) {
     val context = LocalContext.current
@@ -62,6 +69,7 @@ fun ResultScreen(predictionResult: FloatArray?, imageUri: Uri?, navController: N
         targetValue = if (isFullScreen) screenHeight else halfScreenHeight,
         animationSpec = tween(durationMillis = 1000)
     )
+
     val diseaseViewModel: DiseaseViewModel = viewModel()
     val noTreeDialog = remember { mutableStateOf(false) }
 
@@ -368,14 +376,17 @@ fun Bacterial(isFullScreen: Boolean, accuracy: Float){
             text = "Bacterial",
             fontSize = 20.sp,
             fontWeight = Bold,
-            color = Color.Black
+            color = Color.Black,
+            fontFamily = poppinsFamily
         )
 
         Text(
             text = "(Bacterial)",
             fontSize = 20.sp,
             fontWeight = Bold,
-            color = Color.Black
+            color = Color.Black,
+            fontFamily = poppinsFamily
+
         )
 
         Box(

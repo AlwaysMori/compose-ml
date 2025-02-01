@@ -51,13 +51,22 @@ import kotlinx.coroutines.withContext
 import org.bson.types.ObjectId
 import java.text.SimpleDateFormat
 import java.util.Locale
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontWeight.Companion.Light
+import poppinsFamily
 
 @Composable
 fun RecommendationsScreen(diseaseId: String?, navController: NavHostController) {
     val diseaseViewModel: DiseaseViewModel = viewModel()
     var disease by remember { mutableStateOf<Disease?>(null) }
     val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
-
+    val poppinsFamily = FontFamily(
+        Font(R.font.poppins_regular), // Font regular
+        Font(R.font.poppins_bold, weight = FontWeight.Bold),// Font bold
+        Font(R.font.poppins_light, weight = FontWeight.Light)
+    )
     BackHandler {
         navController.navigate("home") {
             popUpTo(navController.graph.startDestinationId) {
@@ -81,7 +90,16 @@ fun RecommendationsScreen(diseaseId: String?, navController: NavHostController) 
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            .background(
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        Color(0xFF6EC1E4), // Soft blue
+                        Color(0xFF56E39F)  // Soft green
+                    ),
+                    start = Offset(0f, 0f),
+                    end = Offset(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+                )
+            )
     ) {
         LazyColumn(
             modifier = Modifier
@@ -125,6 +143,7 @@ fun RecommendationsScreen(diseaseId: String?, navController: NavHostController) 
                                 color = Color.Black,
                                 fontWeight = Bold,
                                 fontSize = 24.sp,
+                                fontFamily = poppinsFamily
                             )
                         }
                     }
@@ -262,7 +281,9 @@ fun Bacterial(){
         Text(
             stringResource(id = R.string.penyebab_bacterial),
             fontSize = 16.sp,
-            color = Color(0xFF585858),
+            color = Color(0xFF000000),
+            fontFamily = poppinsFamily,
+            fontWeight = Light
         )
         Spacer(modifier = Modifier.height(16.dp))
         Divider(color = Color.LightGray, thickness = 1.dp)
@@ -279,7 +300,9 @@ fun Bacterial(){
         Text(
             stringResource(id = R.string.pengendalian_bacterial),
             fontSize = 16.sp,
-            color = Color(0xFF585858)
+            color = Color(0xFF000000),
+            fontFamily = poppinsFamily,
+            fontWeight = Light
         )
         Spacer(modifier = Modifier.height(16.dp))
         Divider(color = Color.LightGray, thickness = 1.dp)
@@ -302,7 +325,9 @@ fun Fungal() {
         Text(
             stringResource(id = R.string.penyebab_fungal),
             fontSize = 16.sp,
-            color = Color(0xFF585858),
+            color = Color(0xFF000000),
+            fontFamily = poppinsFamily,
+            fontWeight = Light
         )
         Spacer(modifier = Modifier.height(16.dp))
         Divider(color = Color.LightGray, thickness = 1.dp)
@@ -319,8 +344,9 @@ fun Fungal() {
         Text(
             stringResource(id = R.string.pengendalian_fungal),
             fontSize = 16.sp,
-            color = Color(0xFF585858)
-        )
+            color = Color(0xFF000000),
+            fontFamily = poppinsFamily,
+            fontWeight = Light        )
         Spacer(modifier = Modifier.height(16.dp))
         Divider(color = Color.LightGray, thickness = 1.dp)
     }
@@ -342,7 +368,9 @@ fun Shepherd() {
         Text(
             stringResource(id = R.string.penyebab_shepherd),
             fontSize = 16.sp,
-            color = Color(0xFF585858),
+            color = Color(0xFF000000),
+            fontFamily = poppinsFamily,
+            fontWeight = Light
         )
         Spacer(modifier = Modifier.height(16.dp))
         Divider(color = Color.LightGray, thickness = 1.dp)
@@ -359,7 +387,9 @@ fun Shepherd() {
         Text(
             stringResource(id = R.string.pengendalian_shepherd),
             fontSize = 16.sp,
-            color = Color(0xFF585858)
+            color = Color(0xFF000000),
+            fontFamily = poppinsFamily,
+            fontWeight = Light
         )
         Spacer(modifier = Modifier.height(16.dp))
         Divider(color = Color.LightGray, thickness = 1.dp)
